@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liquid Runway</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="frame">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Cash flow forecasting demo</p>
+          <h1>Liquid Runway</h1>
+          <p class="lede">
+            A no-fluff dashboard that shows when the bank balance hits zero if no new
+            money arrives. It turns the fog of cash flow into a blunt survival signal.
+          </p>
+        </div>
+        <div class="meter">
+          <span class="meter-label">Runway</span>
+          <strong id="runway-days">--</strong>
+          <p>days until zero</p>
+        </div>
+      </section>
+
+      <section class="top-grid">
+        <article class="panel balance">
+          <div class="panel-head">
+            <h2>Bank balance</h2>
+            <button id="recalc-btn">Recalculate</button>
+          </div>
+          <div class="balance-value" id="balance-value"></div>
+          <div class="mini-stats">
+            <div>
+              <span>Expected inflow</span>
+              <strong id="inflow-value"></strong>
+            </div>
+            <div>
+              <span>Expected outflow</span>
+              <strong id="outflow-value"></strong>
+            </div>
+            <div>
+              <span>Worst month</span>
+              <strong id="worst-month"></strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel snapshot">
+          <div class="panel-head">
+            <h2>Snapshot</h2>
+            <span class="pill">30-day forecast</span>
+          </div>
+          <div id="snapshot-list" class="snapshot-list"></div>
+        </article>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-head">
+          <h2>Runway graph</h2>
+          <span class="pill neutral">Projected cash position</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="chart" width="1080" height="420"></canvas>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
